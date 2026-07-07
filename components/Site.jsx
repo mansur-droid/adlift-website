@@ -32,12 +32,14 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
+// Detailed buyer journey from ad click to booked appointment.
 const process = [
-  ['01', 'Launch Meta Ads', 'Campaigns are built around buyer intent, local market context, and clear qualification signals.', MousePointerClick],
-  ['02', 'Buyer submits form', 'The buyer shares contact details, timeline, budget, area, and buying situation.', FileSearch],
-  ['03', 'Manual qualification', 'Each inquiry is reviewed and contacted before it reaches your calendar.', Filter],
-  ['04', 'Appointment booked', 'Only buyers matching the agreed criteria are passed forward as appointments.', CalendarCheck],
-  ['05', 'Realtor closes the deal', 'You spend your time with serious buyers instead of sorting through noise.', Handshake],
+  ['01', 'Meta Ads', 'Campaigns are built around buyer intent, your local market, and clear qualification signals.', Zap],
+  ['02', 'Buyer submits information', 'The buyer shares contact details, timeline, budget, preferred area, and buying situation.', FileSearch],
+  ['03', 'Manual qualification', 'Every inquiry is reviewed and contacted before it reaches your calendar.', Filter],
+  ['04', 'Entered into AdLift CRM', 'Qualified buyers are entered into the AdLift CRM to track status and next steps.', Layers3],
+  ['05', 'Appointment booked', 'Only buyers matching the agreed criteria are passed forward as appointments.', CalendarCheck],
+  ['06', 'Realtor speaks with qualified buyer', 'You spend your time with serious buyers instead of sorting through noise.', Handshake],
 ];
 
 const problems = [
@@ -47,23 +49,76 @@ const problems = [
   ['Low intent', 'A buyer lead is not useful just because someone filled out a form.', 'We focus on appointments with buyers who are actively looking and worth speaking with.'],
 ];
 
+// Points that explain why agents trust AdLift.
 const reasons = [
   ['Quality over quantity', 'The goal is not to flood your CRM. The goal is to create buyer conversations worth taking.', Target],
-  ['Payment after delivery', 'You are billed after the agreed service has been delivered, not before value exists.', ShieldCheck],
+  ['Payment after agreed delivery', 'You are billed after the agreed service has been delivered, not before value exists.', ShieldCheck],
   ['No long-term contracts', 'Simple terms. No lock-in designed to trap you after a weak month.', BadgeCheck],
   ['Manual qualification', 'Human review keeps obvious bad fits from reaching your calendar.', PhoneCall],
   ['Transparent communication', 'You should understand what is happening, what is being tested, and what gets booked.', MessageSquareText],
-  ['Built for smaller teams', 'Designed for independent agents and small teams that need qualified conversations, not enterprise noise.', Users],
+  ['Structured lead management', 'Each buyer moves through an organized internal workflow before you ever see them.', Layers3],
 ];
 
 const faqs = [
-  ['How do you generate buyers?', 'We run Meta Ads that drive buyer inquiries through a structured form. The goal is to capture useful qualification details before any appointment is booked.'],
-  ['How does payment work?', 'Clients are billed after the agreed service has been delivered. There are no hidden fees and no long-term contract requirement.'],
-  ['How are buyers qualified?', 'Buyers are reviewed against agreed criteria such as financial readiness, pre-approval when applicable, timeline, desired area, and whether they are actively looking.'],
-  ['What if a buyer is not qualified?', 'They are not passed forward as a qualified appointment. The purpose of the qualification step is to protect your time.'],
-  ['Do I need to sign a long-term contract?', 'No. AdLift is structured to reduce risk with simple terms and no long-term lock-in.'],
-  ['How quickly do leads arrive?', 'Timing depends on the market, offer, ad performance, and area. We avoid pretending every market behaves the same. The discovery call is used to set realistic expectations.'],
-  ['What areas do you work in?', 'AdLift works with real estate agents and small teams in the United States. Campaign criteria are adjusted around the local market and the agent’s target buyer profile.'],
+  [
+    'How do you generate buyers?',
+    'We run targeted Meta Ads that drive buyer inquiries through a structured form. The goal is to capture useful qualification details before any appointment is booked.',
+  ],
+  [
+    'How does payment work?',
+    'You are billed after the agreed service has been delivered. There are no hidden fees and no long\u2011term contract requirement.',
+  ],
+  [
+    'How are buyers qualified?',
+    'Buyers are reviewed against criteria like budget, preferred area, buying timeline, financial readiness or pre\u2011approval, and whether they are already working with an agent. Only those who meet the agreed criteria are booked.',
+  ],
+  [
+    'What if a buyer isn\u2019t qualified?',
+    'They are not passed forward as a qualified appointment. The qualification step protects your time by filtering out poor\u2011quality enquiries before they reach your calendar.',
+  ],
+  [
+    'Do I need to sign a long\u2011term contract?',
+    'No. AdLift offers simple terms with no long\u2011term lock\u2011in.',
+  ],
+  [
+    'How quickly do leads arrive?',
+    'Timing depends on your market, offer, ad performance, and area. During the discovery call we\u2019ll set realistic expectations for how quickly qualified appointments can be generated.',
+  ],
+  [
+    'Why don\u2019t you show testimonials yet?',
+    'AdLift prefers to earn genuine testimonials through client results rather than publishing fake reviews. Once real clients have benefited from the service, we will share their feedback professionally.',
+  ],
+  [
+    'What areas do you work in?',
+    'AdLift works with real estate agents and small teams in the United States. Campaign criteria are adjusted around the local market and the agent\u2019s target buyer profile.',
+  ],
+];
+
+// Criteria used to evaluate and qualify each buyer.
+const qualificationCriteria = [
+  'Budget and price range',
+  'Preferred area or neighbourhood',
+  'Buying timeline',
+  'Financial qualification or pre\u2011approval',
+  'Already working with another agent',
+];
+
+// Steps in our internal lead management workflow.
+const internalLeadSteps = [
+  'Lead enters the system',
+  'Manual review & conversation',
+  'Qualified against agreed criteria',
+  'Only serious buyers move forward',
+];
+
+// End\u2011to\u2011end operational process from first click to client communication.
+const operations = [
+  ['01', 'Campaign creation', 'Campaigns are crafted around your local market, offer and ideal buyer profile.', Zap],
+  ['02', 'Buyer generation', 'Potential buyers submit details through a structured form.', Layers3],
+  ['03', 'Manual qualification', 'Every inquiry is reviewed and contacted before it is considered qualified.', PhoneCall],
+  ['04', 'CRM management', 'Qualified buyers are organized in our CRM to track status and next actions.', Layers3],
+  ['05', 'Appointment booking', 'We schedule calls between you and buyers who meet all criteria.', CalendarCheck],
+  ['06', 'Client communication', 'You stay informed with transparent updates and insights at every stage.', MessageSquareText],
 ];
 
 function SectionHeader({ eyebrow, title, text }) {
@@ -113,9 +168,9 @@ export default function Site() {
           <motion.div className="pill" variants={fadeUp}>
             <Sparkles size={16} /> Qualified buyer appointments for real estate agents
           </motion.div>
-          <motion.h1 variants={fadeUp}>Buyer appointments without paying upfront for noise.</motion.h1>
+          <motion.h1 variants={fadeUp}>Qualified buyer appointments through targeted Meta Ads and manual qualification.</motion.h1>
           <motion.p className="hero-sub" variants={fadeUp}>
-            AdLift helps independent real estate agents and small teams generate buyer inquiries through Meta Ads, manually qualify each buyer, and book only serious prospects into your calendar.
+            AdLift helps real estate agents and small teams generate qualified buyer appointments through targeted Meta Ads and a hands\u2011on qualification process. Only buyers who meet your criteria are booked, and you pay after the service is delivered.
           </motion.p>
           <motion.div variants={fadeUp}><CTAButtons /></motion.div>
           <motion.div className="trust-strip" variants={fadeUp}>
@@ -162,8 +217,12 @@ export default function Site() {
       </section>
 
       <section id="process" className="section process-section">
-        <SectionHeader eyebrow="How it works" title="A simple system from ad click to booked appointment." text="The process is intentionally narrow: generate buyer interest, qualify manually, and only book appointments that meet the agreed criteria." />
-        <div className="process-line">
+        <SectionHeader
+          eyebrow="How it works"
+          title="A simple system from ad click to booked appointment."
+          text="The process is intentionally narrow: generate buyer interest, qualify manually, and only book appointments that meet the agreed criteria."
+        />
+        <div className="process-line" style={{ gridTemplateColumns: 'repeat(6, 1fr)' }}>
           {process.map(([num, title, body, Icon]) => (
             <motion.div className="process-step" key={title} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <span className="step-num">{num}</span>
@@ -173,6 +232,26 @@ export default function Site() {
             </motion.div>
           ))}
         </div>
+        <CTAButtons />
+      </section>
+
+      {/* Buyer qualification criteria */}
+      <section id="qualification" className="section">
+        <SectionHeader
+          eyebrow="Buyer qualification"
+          title="How buyers are qualified"
+          text="Every buyer is evaluated against clear criteria so only serious prospects reach your calendar."
+        />
+        <div className="qualification-card">
+          <p className="mini-label">Qualification criteria</p>
+          {qualificationCriteria.map((item) => (
+            <div className="check-row" key={item}>
+              <CheckCircle2 size={17} />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <CTAButtons />
       </section>
 
       <section className="section split-section">
@@ -190,23 +269,82 @@ export default function Site() {
       </section>
 
       <section className="section">
-        <SectionHeader eyebrow="Why choose AdLift" title="Built for agents who would rather speak to serious buyers than chase bad leads." />
+        <SectionHeader
+          eyebrow="Why agents trust AdLift"
+          title="Built on transparency, structure and fairness."
+          text=""
+        />
         <motion.div className="reason-grid" variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}>
           {reasons.map(([title, body, Icon]) => (
             <motion.article className="reason-card" variants={fadeUp} key={title}>
-              <Icon size={24}/>
+              <Icon size={24} />
               <h3>{title}</h3>
               <p>{body}</p>
             </motion.article>
           ))}
         </motion.div>
+        <CTAButtons />
+      </section>
+
+      {/* Operational process section */}
+      <section id="our-process" className="section">
+        <SectionHeader
+          eyebrow="Our process"
+          title="An end\u2011to\u2011end system from first click to client communication."
+          text="This is more than ad campaigns \u2013 it\u2019s a structured operation ensuring quality at every step."
+        />
+        <div className="process-line" style={{ gridTemplateColumns: 'repeat(6, 1fr)' }}>
+          {operations.map(([num, title, body, Icon]) => (
+            <motion.div
+              className="process-step"
+              key={title}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <span className="step-num">{num}</span>
+              <Icon size={22} />
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </motion.div>
+          ))}
+        </div>
+        <CTAButtons />
+      </section>
+
+      {/* Internal lead management section */}
+      <section id="lead-management" className="section">
+        <SectionHeader
+          eyebrow="Internal lead management"
+          title="Every buyer moves through a structured qualification workflow."
+          text="No generic spreadsheets or chaotic lists. Our internal CRM ensures each buyer is contacted, vetted and tracked before they reach you."
+        />
+        <div className="qualification-card">
+          <p className="mini-label">Workflow overview</p>
+          {internalLeadSteps.map((item) => (
+            <div className="check-row" key={item}>
+              <CheckCircle2 size={17} />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <CTAButtons />
       </section>
 
       <section className="section about">
-        <SectionHeader eyebrow="About AdLift" title="A modern appointment-setting company focused on clear standards." text="AdLift exists because real estate agents do not need more low-quality leads. They need cleaner buyer conversations, less uncertainty, and a process that respects their time." />
+        <SectionHeader
+          eyebrow="Founder & mission"
+          title="Built by marketers for real estate agents who value clarity and quality."
+          text="AdLift exists because real estate agents don\u2019t need more low\u2011quality leads. They need transparent systems, strict qualification standards and a partner who respects their time."
+        />
         <div className="about-copy">
-          <p>We are not pretending to be a decades-old agency with endless logos. AdLift is built around a direct belief: buyer generation should be transparent, qualification should be strict, and agents should understand exactly what they are paying for.</p>
-          <p>The mission is to help independent agents and small teams create a steadier path to qualified buyer appointments without forcing them into long contracts or upfront payment for unproven volume.</p>
+          <p>
+            AdLift was founded by a real estate marketing professional who recognised that agents don\u2019t need more low\u2011quality leads. They need transparent systems, strict qualification standards and a partner who respects their time.
+          </p>
+          <p>
+            Our mission is to help independent agents and small teams create a steady path to qualified buyer appointments without forcing them into long contracts or upfront payments for unproven volume. We aren\u2019t decades old; we are modern, focused and working to earn our reputation through results.
+          </p>
         </div>
       </section>
 
