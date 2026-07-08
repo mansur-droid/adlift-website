@@ -66,31 +66,31 @@ const faqs = [
   ],
   [
     'How does payment work?',
-    'You are billed after the agreed service has been delivered. There are no hidden fees and no long\u2011term contract requirement.',
+    'You are billed after the agreed service has been delivered. There are no hidden fees and no long-term contract requirement.',
   ],
   [
     'How are buyers qualified?',
-    'Buyers are reviewed against criteria like budget, preferred area, buying timeline, financial readiness or pre\u2011approval, and whether they are already working with an agent. Only those who meet the agreed criteria are booked.',
+    'Buyers are reviewed against criteria like budget, preferred area, buying timeline, financial readiness or pre-approval, and whether they are already working with an agent. Only those who meet the agreed criteria are booked.',
   ],
   [
-    'What if a buyer isn\u2019t qualified?',
-    'They are not passed forward as a qualified appointment. The qualification step protects your time by filtering out poor\u2011quality enquiries before they reach your calendar.',
+    'What if a buyer isn\'t qualified?',
+    'They are not passed forward as a qualified appointment. The qualification step protects your time by filtering out poor-quality enquiries before they reach your calendar.',
   ],
   [
-    'Do I need to sign a long\u2011term contract?',
-    'No. AdLift offers simple terms with no long\u2011term lock\u2011in.',
+    'Do I need to sign a long-term contract?',
+    'No. AdLift offers simple terms with no long-term lock-in.',
   ],
   [
     'How quickly do leads arrive?',
-    'Timing depends on your market, offer, ad performance, and area. During the discovery call we\u2019ll set realistic expectations for how quickly qualified appointments can be generated.',
+    'Timing depends on your market, offer, ad performance, and area. During the discovery call we\'ll set realistic expectations for how quickly qualified appointments can be generated.',
   ],
   [
-    'Why don\u2019t you show testimonials yet?',
+    'Why don\'t you show testimonials yet?',
     'AdLift prefers to earn genuine testimonials through client results rather than publishing fake reviews. Once real clients have benefited from the service, we will share their feedback professionally.',
   ],
   [
     'What areas do you work in?',
-    'AdLift works with real estate agents and small teams in the United States. Campaign criteria are adjusted around the local market and the agent\u2019s target buyer profile.',
+    'AdLift works with real estate agents and small teams in the United States. Campaign criteria are adjusted around the local market and the agent\'s target buyer profile.',
   ],
 ];
 
@@ -99,7 +99,7 @@ const qualificationCriteria = [
   'Budget and price range',
   'Preferred area or neighbourhood',
   'Buying timeline',
-  'Financial qualification or pre\u2011approval',
+  'Financial qualification or pre-approval',
   'Already working with another agent',
 ];
 
@@ -111,7 +111,7 @@ const internalLeadSteps = [
   'Only serious buyers move forward',
 ];
 
-// End\u2011to\u2011end operational process from first click to client communication.
+// End-to-end operational process from first click to client communication.
 const operations = [
   ['01', 'Campaign creation', 'Campaigns are crafted around your local market, offer and ideal buyer profile.', Zap],
   ['02', 'Buyer generation', 'Potential buyers submit details through a structured form.', Layers3],
@@ -134,7 +134,7 @@ function SectionHeader({ eyebrow, title, text }) {
 function CTAButtons() {
   return (
     <div className="cta-row">
-      <a className="btn primary" href="#contact">
+      <a className="btn primary" href="https://calendly.com/mansur-adlift/30min?back=1&month=2025-11&date=2025-11-24" target="_blank" rel="noopener noreferrer">
         Book a discovery call <ArrowRight size={18} />
       </a>
       <a className="btn secondary" href="#process">
@@ -160,7 +160,7 @@ export default function Site() {
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="nav-cta" href="#contact">Book call</a>
+        <a className="nav-cta" href="https://calendly.com/mansur-adlift/30min?back=1&month=2025-11&date=2025-11-24" target="_blank" rel="noopener noreferrer">Book call</a>
       </header>
 
       <section id="top" className="hero">
@@ -170,7 +170,7 @@ export default function Site() {
           </motion.div>
           <motion.h1 variants={fadeUp}>Qualified buyer appointments through targeted Meta Ads and manual qualification.</motion.h1>
           <motion.p className="hero-sub" variants={fadeUp}>
-            AdLift helps real estate agents and small teams generate qualified buyer appointments through targeted Meta Ads and a hands\u2011on qualification process. Only buyers who meet your criteria are booked, and you pay after the service is delivered.
+            AdLift helps real estate agents and small teams generate qualified buyer appointments through targeted Meta Ads and a hands-on qualification process. Only buyers who meet your criteria are booked, and you pay after the service is delivered.
           </motion.p>
           <motion.div variants={fadeUp}><CTAButtons /></motion.div>
           <motion.div className="trust-strip" variants={fadeUp}>
@@ -290,8 +290,8 @@ export default function Site() {
       <section id="our-process" className="section">
         <SectionHeader
           eyebrow="Our process"
-          title="An end\u2011to\u2011end system from first click to client communication."
-          text="This is more than ad campaigns \u2013 it\u2019s a structured operation ensuring quality at every step."
+          title="An end-to-end system from first click to client communication."
+          text="This is more than ad campaigns - it's a structured operation ensuring quality at every step."
         />
         <div className="process-line" style={{ gridTemplateColumns: 'repeat(6, 1fr)' }}>
           {operations.map(([num, title, body, Icon]) => (
@@ -336,14 +336,14 @@ export default function Site() {
         <SectionHeader
           eyebrow="Founder & mission"
           title="Built by marketers for real estate agents who value clarity and quality."
-          text="AdLift exists because real estate agents don\u2019t need more low\u2011quality leads. They need transparent systems, strict qualification standards and a partner who respects their time."
+          text="AdLift exists because real estate agents don't need more low-quality leads. They need transparent systems, strict qualification standards and a partner who respects their time."
         />
         <div className="about-copy">
           <p>
-            AdLift was founded by a real estate marketing professional who recognised that agents don\u2019t need more low\u2011quality leads. They need transparent systems, strict qualification standards and a partner who respects their time.
+            AdLift was founded by a real estate marketing professional who recognised that agents don't need more low-quality leads. They need transparent systems, strict qualification standards and a partner who respects their time.
           </p>
           <p>
-            Our mission is to help independent agents and small teams create a steady path to qualified buyer appointments without forcing them into long contracts or upfront payments for unproven volume. We aren\u2019t decades old; we are modern, focused and working to earn our reputation through results.
+            Our mission is to help independent agents and small teams create a steady path to qualified buyer appointments without forcing them into long contracts or upfront payments for unproven volume. We aren't decades old; we are modern, focused and working to earn our reputation through results.
           </p>
         </div>
       </section>
@@ -367,7 +367,7 @@ export default function Site() {
             <h2>Find out if AdLift makes sense for your market.</h2>
             <p>Book a call to discuss your area, ideal buyer profile, qualification criteria, and whether the model is a fit. No pressure. No inflated promises.</p>
           </div>
-          <a className="btn primary large" href="mailto:mansur.betelguiriev@gmail.com?subject=AdLift%20Discovery%20Call">
+          <a className="btn primary large" href="https://calendly.com/mansur-adlift/30min?back=1&month=2025-11&date=2025-11-24" target="_blank" rel="noopener noreferrer">
             Contact AdLift <ArrowRight size={18}/>
           </a>
         </motion.div>
