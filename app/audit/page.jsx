@@ -3,11 +3,11 @@ import AuditForm from '@/components/AuditForm';
 export const metadata = {
   title: 'Free Buyer Acquisition Audit for Realtors | AdLift',
   description: 'Get a free personalized breakdown of how AdLift would structure buyer targeting, qualification and a buyer acquisition funnel for your real estate market.',
-  alternates: { canonical: 'https://www.adlift.agency/audit' },
+  alternates: { canonical: 'https://adlift.agency/audit/' },
   openGraph: {
     title: 'Free Buyer Acquisition Audit for Realtors | AdLift',
     description: 'See how a buyer acquisition campaign could be structured for your real estate market.',
-    url: 'https://www.adlift.agency/audit',
+    url: 'https://adlift.agency/audit/',
     type: 'website',
   },
 };
