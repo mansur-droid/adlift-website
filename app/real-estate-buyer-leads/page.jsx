@@ -127,7 +127,7 @@ export default function RealEstateBuyerLeadsPage() {
         </section>
 
         <section className={styles.auditCta}>
-          <div><p className="eyebrow">Free Buyer Acquisition Audit</p><h2>See how a buyer-acquisition system could be structured for your market.</h2><p>Tell AdLift about your market, ideal buyer, target price range, current acquisition methods and advertising situation. We'll use that context to prepare a practical buyer-acquisition audit — without fabricated forecasts or guaranteed outcomes.</p></div>
+          <div><p className="eyebrow">Free Buyer Acquisition Audit</p><h2>See how a buyer-acquisition system could be structured for your market.</h2><p>Tell AdLift about your market, ideal buyer, target price range, current acquisition methods and advertising situation. We'll use that context to prepare a practical buyer-acquisition audit tailored to your market, ideal buyer and current acquisition setup.</p></div>
           <a className="btn primary large" href="/audit/">Get Your Free Buyer Acquisition Audit <ArrowRight size={18}/></a>
         </section>
 
