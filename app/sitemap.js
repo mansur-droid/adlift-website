@@ -5,6 +5,7 @@ const pages = [
   { path: '/audit/', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/real-estate-buyer-leads/', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/how-to-generate-real-estate-leads/', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/best-real-estate-leads-for-agents/', changeFrequency: 'monthly', priority: 0.9 },
 ];
 
 export default function sitemap() {
