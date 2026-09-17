@@ -83,7 +83,7 @@ export default function RealEstateLeadGenerationGuide() {
 
         <section className={styles.section}>
           <p className="eyebrow">Channel strategy</p><h2>Major Real Estate Lead-Generation Channels</h2>
-          <p>There is no universal best way to get real estate leads. Channels differ in speed, cost, control, intent, scalability and the amount of agent time they require. The right mix depends on the market and the resources available.</p>
+          <p>There is no universal best way to get real estate leads. Channels differ in speed, cost, control, intent, scalability and the amount of agent time they require. The right mix depends on the market and the resources available. For a side-by-side look at these trade-offs, see our guide to <a className={styles.textLink} href="/best-real-estate-leads-for-agents/">comparing real estate lead sources for agents</a>.</p>
           <div className={styles.channelSummary}><div><strong>Relationship-led</strong><span>Referrals, sphere, partnerships</span></div><div><strong>Inbound organic</strong><span>SEO, content, local visibility, social</span></div><div><strong>Paid acquisition</strong><span>Meta Ads, Google Ads</span></div><div><strong>Direct & in-person</strong><span>Outbound, networking, open houses</span></div></div>
         </section>
 
