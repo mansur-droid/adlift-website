@@ -151,9 +151,7 @@ export default function Site() {
       <div className="ambient ambient-two" />
 
       <header className="nav">
-        <a className="logo" href="#top" aria-label="AdLift home">
-          <span>Ad</span>Lift
-        </a>
+        <a className="logo" href="/" aria-label="AdLift home">\n          <img className="brand-logo" src="/adlift-logo.png" alt="AdLift" />\n        </a>
         <nav aria-label="Primary navigation">
           <a href="#problem">Why it fails</a>
           <a href="#process">Process</a>
