@@ -42,7 +42,7 @@ export default function RealEstateLeadGenerationGuide() {
   return <main className={styles.page}>
     <div className="ambient ambient-one"/><div className="ambient ambient-two"/>
     <header className="nav">
-      <a className="logo" href="/" aria-label="AdLift home"><img className="brand-logo" src="/adlift-logo.png" alt="AdLift" /></a>
+      <a className="logo" href="/" aria-label="AdLift home"><img className="brand-logo" src="/adlift-icon.png" alt="AdLift" /></a>
       <nav aria-label="Primary navigation"><a href="/#problem">Why it fails</a><a href="/#process">Process</a><a href="/#faq">FAQ</a><a href="/audit/">Free Audit</a></nav>
       <a className="nav-cta" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">Book call</a>
     </header>
