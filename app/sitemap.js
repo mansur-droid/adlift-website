@@ -8,6 +8,7 @@ const pages = [
   { path: '/best-real-estate-leads-for-agents/', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/real-estate-lead-generation-company/', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/facebook-ads-for-real-estate-agents/', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/real-estate-lead-qualification/', changeFrequency: 'monthly', priority: 0.9 },
 ];
 
 export default function sitemap() {
