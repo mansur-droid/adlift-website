@@ -66,7 +66,7 @@ export default function RealEstateLeadGenerationGuide() {
         <section className={styles.section}>
           <p className="eyebrow">Start with the system</p><h2>What Does Real Estate Lead Generation Mean?</h2>
           <p>Real estate lead generation is the process of attracting or reaching prospective buyers and sellers, giving them a reason to identify themselves, and creating a path for follow-up. A lead might come from a referral, search result, advertisement, social interaction, open house, outbound conversation or another source.</p>
-          <p>The acquisition source is only the first part. Effective lead generation also needs a way to capture useful information, determine whether the prospect fits the agent's business, follow up appropriately and measure what happens after the initial inquiry.</p>
+          <p>The acquisition source is only the first part. Effective lead generation also needs a way to capture useful information, determine whether the prospect fits the agent's business, <a className={styles.textLink} href="/real-estate-lead-qualification/">qualify the lead</a>, <a className={styles.textLink} href="/real-estate-lead-follow-up/">follow up appropriately</a> and measure what happens after the initial inquiry.</p>
         </section>
 
         <section className={styles.split}>
