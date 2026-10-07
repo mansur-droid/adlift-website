@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEvent } from './funnel';
 import { ArrowRight, CheckCircle2, Clock3, CalendarCheck } from 'lucide-react';
 
 const stages = ['Buyer inquiry', 'Manual qualification', 'Appointment handoff'];
@@ -67,7 +68,7 @@ export default function BuyerWorkflowDemo() {
         </div>
         <div className="demo-filter"><strong>What if the buyer doesn’t fit?</strong><p>An inquiry outside the agreed area, budget or timeline would not advance as a qualified appointment. An unanswered inquiry remains pending.</p></div>
       </div>
-      <div className="demo-cta"><div><h3>What would qualification look like in your market?</h3><p>Request a free audit tailored to your market, ideal buyer and current acquisition setup.</p></div><a className="btn primary" href="/audit/">Get Your Free Buyer Acquisition Audit <ArrowRight size={18} /></a></div>
+      <div className="demo-cta"><div><h3>What would qualification look like in your market?</h3><p>Request a free audit tailored to your market, ideal buyer and current acquisition setup.</p></div><a className="btn primary" href="/audit/" onClick={() => trackEvent('audit_click', 'workflow')}>Get Your Free Buyer Acquisition Audit <ArrowRight size={18} /></a></div>
     </section>
   );
 }
