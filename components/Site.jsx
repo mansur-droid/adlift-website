@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import BuyerWorkflowDemo from './BuyerWorkflowDemo';
 import {
   ArrowRight,
   BadgeCheck,
@@ -94,15 +95,6 @@ const faqs = [
   ],
 ];
 
-// Criteria used to evaluate and qualify each buyer.
-const qualificationCriteria = [
-  'Budget and price range',
-  'Preferred area or neighbourhood',
-  'Buying timeline',
-  'Financial qualification or pre-approval',
-  'Already working with another agent',
-];
-
 // Steps in our internal lead management workflow.
 const internalLeadSteps = [
   'Lead enters the system',
@@ -181,7 +173,7 @@ export default function Site() {
         <motion.div className="hero-panel" initial={{ opacity: 0, scale: 0.96, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}>
           <div className="panel-top">
             <div><p>Appointment pipeline</p><h3>Buyer Qualification</h3></div>
-            <span className="status">Live process</span>
+            <span className="status">Workflow overview</span>
           </div>
           <div className="pipeline">
             <div className="pipe-card active"><Zap size={18}/><span>Meta Ads</span></div>
@@ -233,24 +225,7 @@ export default function Site() {
         <CTAButtons />
       </section>
 
-      {/* Buyer qualification criteria */}
-      <section id="qualification" className="section">
-        <SectionHeader
-          eyebrow="Buyer qualification"
-          title="How buyers are qualified"
-          text="Every buyer is evaluated against clear criteria so only serious prospects reach your calendar."
-        />
-        <div className="qualification-card">
-          <p className="mini-label">Qualification criteria</p>
-          {qualificationCriteria.map((item) => (
-            <div className="check-row" key={item}>
-              <CheckCircle2 size={17} />
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-        <CTAButtons />
-      </section>
+      <BuyerWorkflowDemo />
 
       <section className="section split-section">
         <motion.div className="glass-block" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
