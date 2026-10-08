@@ -20,7 +20,7 @@ export async function POST(request){
       current_acquisition_methods:cleanList(body.current_acquisition_methods), current_monthly_buyer_volume:clean(body.current_monthly_buyer_volume,50),
       currently_running_ads:clean(body.currently_running_ads,10), monthly_ad_budget:clean(body.monthly_ad_budget,50), marketing_consent:body.marketing_consent===true, status:'new'
     };
-    if(!row.first_name||!emailOk(row.email)||!row.city||!row.state||!row.average_home_price||!row.target_buyer_type.length||!row.target_price_range||!row.target_areas||!row.current_acquisition_methods.length||!row.current_monthly_buyer_volume||!['Yes','No'].includes(row.currently_running_ads)||!row.monthly_ad_budget) return NextResponse.json({error:'Please complete all required fields.'},{status:400});
+    if(!row.first_name||!emailOk(row.email)||!row.city||!row.state||!row.target_buyer_type.length||!row.target_price_range||!row.current_acquisition_methods.length||!['Yes','No'].includes(row.currently_running_ads)) return NextResponse.json({error:'Please complete all required fields.'},{status:400});
     const url=process.env.SUPABASE_URL; const key=process.env.SUPABASE_SERVICE_ROLE_KEY;
     if(!url||!key){console.error('Audit storage is not configured');return NextResponse.json({error:'Audit submissions are temporarily unavailable. Please try again shortly.'},{status:503});}
     const result=await fetch(`${url}/rest/v1/audit_requests`,{method:'POST',headers:{apikey:key,Authorization:`Bearer ${key}`,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(row),cache:'no-store'});
